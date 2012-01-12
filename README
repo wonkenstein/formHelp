@@ -1,1 +1,4 @@
 jQuery plugin to show/hide help descriptions for form elements on on focus
+
+Each form element should be wrapped in an element with a classname form-item
+The help text should be in an element with a classname description
