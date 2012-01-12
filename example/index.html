@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>WonksTicker Example</title>
+  <link rel="stylesheet" href="style.css?v=1.0">
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="../formHelp.plugin.js"></script>
+</head>
+<body>
+
+<div id="wrapper">
+  <h1>Some super duper form</h1>
+  <form accept-charset="UTF-8" id="my-form" method="post" action="/index.html" enctype="multipart/form-data" class="node-form node-article-form"><div>
+
+    <div class="form-item">
+      <label for="edit-title">Title </label>
+      <input type="text" name="title" id="edit-title" value="" />
+
+      <div class="description">Some content to help with title</div>
+    </div>
+
+    <div class="form-item">
+      <label for="edit-select">Which event did you attend? </label>
+      <select name="event" id="edit-event">
+        <option value="interactive">Interactive</option>
+        <option value="music">music</option>
+        <option value="movie">Movie</option>
+      </select>
+
+      <div class="description">Some content to help with select/dropdown</div>
+    </div>
+
+    <div class="form-item">
+      <label for="edit-body">Some text area </label>
+      <textarea name="body" id="edit-body"></textarea>
+
+      <div class="description">Some content to help with text area</div>
+    </div>
+
+    <div class="form-item">
+      <label for="edit-body">Some text area </label>
+      <textarea name="body" id="edit-body"></textarea>
+
+      <div class="description">Some content to help with text area</div>
+    </div>
+
+    <div class="form-item">
+      <label for="edit-body">Some text area </label>
+      <textarea name="body" id="edit-body"></textarea>
+
+      <div class="description">Some content to help with text area</div>
+    </div>
+
+    <div class="form-item">
+      <p>A Group of check boxes</p>
+      <input type="checkbox" value="1" name="status" id="edit-status">  <label for="edit-status">Published </label>
+      <input type="checkbox" value="1" name="promote" id="edit-promote">  <label for="edit-promote">Promoted to front page </label>
+      <input type="checkbox" value="1" name="sticky" id="edit-sticky">  <label for="edit-sticky">Sticky at top of lists </label>
+
+      <div class="description">Some content to help with checkboxes.</div>
+    </div>
+
+
+    <div class="form-item">
+      <p>A Group of radio buttons</p>
+      <input type="radio" value="2" name="comment" id="edit-comment-2">  <label for="edit-comment-2">Open </label>
+      <input type="radio" value="1" name="comment" id="edit-comment-1">  <label for="edit-comment-1">Closed </label>
+
+      <div class="description">Some content to help with radio buttons.</div>
+    </div>
+
+
+    <div class="form-item">
+      <input type="submit" value="Enter" />
+    </div>
+
+  </form>
+</div>
+<script type="text/javascript">
+/* js to start the tickers */
+$(document).ready(function(){
+  $('#example1 .ticker').wonksticker();
+  $('#example2 .ticker').wonksticker({scroll:'right'});
+  $('#example4 ul').wonksticker({scroll:'up'});
+  $('#example3 ul').wonksticker({scroll:'down'});
+});
+</script>
+
+</body>
+</html>
