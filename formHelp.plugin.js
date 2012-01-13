@@ -22,25 +22,37 @@
 
 
 	//
-  Plugin.prototype.init = function () {
-    console.log('init');
+  Plugin.prototype.init = function() {
     var thisObj = this;
+    // hide all the descriptions
     $('.description', thisObj.element).hide();
 
-    $('.form-item').each(function(i){
-      $(this).attr('tabindex', i);
+    $(this.element).click(function(e){
+      thisObj.setActive(e.target);
     });
 
-    $('.form-item', this.element).bind('focusin', function(e){
-      console.log('focusin');
-      var formitem = $(this).parents('.form-item');
-      $('.description', formitem).show();
+    $('input, select, textarea', this.element).focus(function(e){
+      thisObj.setActive(e.target);
     });
+  };
 
-    $('.form-item', this.element).bind('focusout', function(e){
-      console.log('blurout');
-      $('.description', thisObj.element).hide();
-    });
+
+  // set active form element
+  Plugin.prototype.setActive = function(target) {
+    var target = $(target).closest('.form-item');
+
+	  if (!target.hasClass('active')) {
+      this.resetForm();
+      $('.description', target).show();
+      target.addClass('active');
+    }
+  };
+
+
+  //
+  Plugin.prototype.resetForm = function() {
+    $('.description', this.element).hide();
+    $('.form-item', this.element).removeClass('active');
   };
 
 
